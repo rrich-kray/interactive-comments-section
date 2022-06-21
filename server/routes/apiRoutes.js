@@ -70,4 +70,35 @@ router.post("/interactive-comments-section/api/register", async (req, res) => {
     });
 });
 
+router.post("/interactive-comments-section/api/upvote", async (req, res) => {
+  console.log(req.body);
+  await Upvote.create(req.body)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
+router.post("/interactive-comments-section/api/downvote", async (req, res) => {
+  await Downvote.create(req.body)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
 module.exports = router;

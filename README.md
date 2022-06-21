@@ -1,4 +1,4 @@
-# MERN Blog
+# Interactive Comments Section
 
 This repository contains the code for the Interactive Comments Section project.
 

@@ -5,7 +5,6 @@ This repository contains the code for the Interactive Comments Section project.
 ## Table of Contents
 
 [description](#description)  
-[installation](#installation)  
 [Utilizes](#utilizes)  
 [credits](#credits)  
 [contact](#contact)  
@@ -16,10 +15,6 @@ This repository contains the code for the Interactive Comments Section project.
 ## Description
 
 Another frontend mentor challenge which I undertook to gain experience implementing a React global context for authentication within a REST API (as apposed to GraphQL). In the end, the implementation was very similar to that within a GraphQL API - The only difference was that the POST route generated a token and returned it to the frontend as opposed to a GraphQL mutation. With that said, the rest of the application is bare bones - users can login/register, and add comments.
-
-## Installation
-
-No installation required, just follow the link below:
 
 ## Utilizes
 

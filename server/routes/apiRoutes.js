@@ -71,7 +71,16 @@ router.post("/interactive-comments-section/api/register", async (req, res) => {
 });
 
 router.post("/interactive-comments-section/api/upvote", async (req, res) => {
-  console.log(req.body);
+  // have to make sure user cannot upvote/downvote a comment more than once
+  // Search Upvote for item with both req.user_id and req.comment
+  // if (
+  //   Upvote.findOne({
+  //     where: { comment_id: req.body.comment_id, user_id: req.body.user_id },
+  //   })
+  // ) {
+  //   res.json("User has already commented on this post!");
+  //   return;
+  // }
   await Upvote.create(req.body)
     .then((response) => {
       if (response.ok) {

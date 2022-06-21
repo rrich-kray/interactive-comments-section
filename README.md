@@ -14,7 +14,7 @@ This repository contains the code for the Interactive Comments Section project.
 
 ## Description
 
-Another frontend mentor challenge which I undertook to gain experience implementing a React global context for authentication within a REST API (as apposed to GraphQL). In the end, the implementation was very similar to that within a GraphQL API - The only difference was that the POST route generated a token and returned it to the frontend as opposed to a GraphQL mutation. the project also gave me more experience working with Sequelize model associations. With that said, the rest of the application is bare bones - users can login/register, and add comments.
+Another frontend mentor challenge which I undertook to gain experience implementing a React global context for authentication within a REST API (as apposed to GraphQL). In the end, the implementation was very similar to that within a GraphQL API - The only difference was that the POST route generated a token and returned it to the frontend as opposed to a GraphQL mutation. the project also gave me more experience working with Sequelize model associations. With that said, the rest of the application is bare bones - users can login/register, add comments and upvote/downvote comments.
 
 ## Utilizes
 

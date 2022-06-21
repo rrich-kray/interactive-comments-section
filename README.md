@@ -10,7 +10,7 @@ This repository contains the code for the Interactive Comments Section project.
 [contact](#contact)  
 [license](#license)
 
-![Main screenshot](./client/src/assets/images/screen1.png)
+![Main screenshot](./screen1.png)
 
 ## Description
 

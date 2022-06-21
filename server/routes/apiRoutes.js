@@ -1,11 +1,27 @@
 const router = require("express").Router();
-const User = require("../models/User");
 const Comment = require("../models/Comment");
+const { User } = require("../models");
 const { signToken } = require("../utils/auth");
+const { Upvote } = require("../models");
+const { Downvote } = require("../models");
+// const Downvote = require("../models/Downvote");
 
 router.get("/interactive-comments-section/api/comments", async (req, res) => {
   await Comment.findAll({
-    include: [{ all: true, nested: true }],
+    include: [
+      {
+        model: Upvote,
+        attributes: ["id"],
+      },
+      {
+        model: Downvote,
+        attributes: ["id"],
+      },
+      {
+        model: User,
+        attributes: ["email"],
+      },
+    ],
   })
     .then((response) => {
       res.json(response);

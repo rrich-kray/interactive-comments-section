@@ -36,7 +36,7 @@ router.post("/interactive-comments-section/api/login", async (req, res) => {
   })
     .then((userData) => {
       const token = signToken(userData);
-      res.json(token);
+      res.json({ userData, token });
     })
     .catch((error) => {
       res.json(error);
@@ -47,7 +47,7 @@ router.post("/interactive-comments-section/api/register", async (req, res) => {
   await User.create(req.body)
     .then((userData) => {
       const token = signToken(userData);
-      res.json(token); // assumes no hiccups sending token as json in response. Can then use this token and userData with context on front end per usual
+      res.json({ userData, token }); // assumes no hiccups sending token as json in response. Can then use this token and userData with context on front end per usual
     })
     .catch((error) => {
       res.json(error);

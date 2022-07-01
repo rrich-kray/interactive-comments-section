@@ -1,0 +1,112 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(221, 100%, 92%, 0.25);
+
+}
+
+.comments-container {
+  height: 90%;
+  width: 750px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* border: 1px solid black */
+}
+
+.comments {
+  height: 75%;
+  width: 100%;
+  /* border: 1px solid black; */
+  overflow-y: scroll;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 17px;
+  box-sizing: content-box;
+  margin-bottom: 20px
+}
+
+.add-comment {
+  height: 150px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.comment {
+  /* height: 100px; */
+  width: 90%;
+  /* height: 400px; */
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 10px;
+  margin-left: 0;
+  position: relative
+}
+
+.up-arrow {
+  position: absolute;
+  display: flex;
+  top: 30%;
+  left: 2.5%;
+  cursor: pointer
+}
+
+.up-arrow :nth-child(1) {
+  margin-right: 5px
+}
+
+.down-arrow {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 2.5%;
+  cursor: pointer
+}
+
+.down-arrow :nth-child(1) {
+  margin-right: 5px
+}
+
+.comment :nth-child(3) {
+  margin-left: 75px
+}
+
+.comment :nth-child(4) {
+  margin-left: 75px
+}
+
+.comment :nth-child(5) {
+  margin-left: 75px
+}
+
+#title {
+  border-radius: 5px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.submit-btn {
+  width: 200px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

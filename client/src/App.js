@@ -16,12 +16,13 @@ function App() {
     user_id: context.user !== null ? context.user.data.id : "",
   });
 
-  console.log(comments);
-
-  console.log(context);
+  const baseUrl =
+    process.env.NODE_ENV === "production"
+      ? "https://comments-section-rrich-kray.herokuapp.com"
+      : "http://localhost:3001";
 
   useEffect(() => {
-    fetch("http://localhost:3001/interactive-comments-section/api/comments", {
+    fetch(`${baseUrl}/interactive-comments-section/api/comments`, {
       method: "GET",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -52,7 +53,7 @@ function App() {
   };
 
   const submitComment = () => {
-    fetch("http://localhost:3001/interactive-comments-section/api/comments", {
+    fetch(`${baseUrl}/interactive-comments-section/api/comments`, {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -86,6 +87,7 @@ function App() {
       .catch((err) => {
         console.error("Error", err);
       });
+    window.location.replace("/");
   };
 
   console.log(comments);
@@ -93,7 +95,7 @@ function App() {
 
   return (
     <>
-      {context.user === null && <Start />}
+      {context.user === null && <Start baseUrl={baseUrl} />}
       <div className="app">
         <div className="comments-container">
           <div className="comments">
@@ -106,8 +108,8 @@ function App() {
                       vote(
                         comment.id,
                         "upvote",
-                        "http://localhost:3001/interactive-comments-section/api/upvote",
-                        "http://localhost:3001/interactive-comments-section/api/downvote"
+                        `${baseUrl}/interactive-comments-section/api/upvote`,
+                        `${baseUrl}/interactive-comments-section/api/downvote`
                       )
                     }
                   >
@@ -120,8 +122,8 @@ function App() {
                       vote(
                         comment.id,
                         "downvote",
-                        "http://localhost:3001/interactive-comments-section/api/upvote",
-                        "http://localhost:3001/interactive-comments-section/api/downvote"
+                        `${baseUrl}/interactive-comments-section/api/upvote`,
+                        `${baseUrl}/interactive-comments-section/api/downvote`
                       )
                     }
                   >

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 import "./Start.css";
 
-const Start = () => {
+const Start = ({ baseUrl }) => {
   const context = useContext(AuthContext);
   console.log(context);
   const [pageState, changePageState] = useState("start");
@@ -12,9 +12,6 @@ const Start = () => {
     email: "",
     password: "",
   });
-
-  //   console.log(pageState);
-  console.log(formState);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +23,7 @@ const Start = () => {
 
   const submitLogin = (e) => {
     // e.preventDefault();
-    fetch("http://localhost:3001/interactive-comments-section/api/login", {
+    fetch(`${baseUrl}/interactive-comments-section/api/login`, {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -51,7 +48,7 @@ const Start = () => {
 
   const submitRegister = (e) => {
     // e.preventDefault();
-    fetch("http://localhost:3001/interactive-comments-section/api/register", {
+    fetch(`${baseUrl}/interactive-comments-section/api/register`, {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",

@@ -4,7 +4,6 @@ import "./Start.css";
 
 const Start = ({ baseUrl }) => {
   const context = useContext(AuthContext);
-  console.log(context);
   const [pageState, changePageState] = useState("start");
   const [formState, setFormState] = useState({
     first_name: "",
@@ -37,9 +36,8 @@ const Start = ({ baseUrl }) => {
         }
       })
       .then((data) => {
-        console.log(data);
-        context.login(data); // this sets the context properly, but token is not being saved to local storage, so user state is changed to null upon page refresh
-        console.log(context);
+        context.login(data);
+        window.location.replace("/");
       })
       .catch((err) => {
         console.error("Error", err);
@@ -62,8 +60,8 @@ const Start = ({ baseUrl }) => {
         }
       })
       .then((data) => {
-        console.log(data);
         context.login(data);
+        window.location.replace("/");
       })
       .catch((err) => {
         console.error("Error", err);

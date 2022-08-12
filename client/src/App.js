@@ -16,10 +16,12 @@ function App() {
     user_id: context.user !== null ? context.user.data.id : "",
   });
 
-  const baseUrl =
-    process.env.NODE_ENV === "production"
-      ? "https://comments-section-rrich-kray.herokuapp.com"
-      : "http://localhost:3001";
+  // const baseUrl =
+  //   process.env.NODE_ENV === "production"
+  //     ? "https://comments-section-rrich-kray.herokuapp.com"
+  //     : "http://localhost:3001";
+
+  const baseUrl = "https://comments-section-server-rrich.herokuapp.com";
 
   useEffect(() => {
     fetch(`${baseUrl}/interactive-comments-section/api/comments`, {
